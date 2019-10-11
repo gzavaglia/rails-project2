@@ -1,0 +1,8 @@
+<h1><%= @building.name %></h1>
+Adress: <%= @building.address %><br />
+Number of Floors: <%= @building.floors %><br />
+<br />
+<%= form_tag("/rides", method: "post") do %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :attraction_id, @attraction.id %>
+<%= button_tag "Go on this ride" %>

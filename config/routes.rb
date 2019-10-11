@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects
+  root "static_pages#home"
+  resources :users, only: [:new, :create, :show]
   resources :buildings
-  resources :users
- 
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/session', to: 'sessions#destroy'
+  post '/projects', to: 'projects#create'
 end

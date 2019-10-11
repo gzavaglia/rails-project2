@@ -1,0 +1,9 @@
+<h1>Buildings</h1>
+<% if current_user %>
+  <ul>
+  <% current_user.buildings.each do |building| %>
+    <li><%= link_to "#{building.name}", building_path(building) %></li>
+  <% end %>
+  </ul>
+  <%= link_to "Add a New Building", new_building_path %>
+<% end %>

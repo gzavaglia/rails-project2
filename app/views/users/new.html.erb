@@ -1,0 +1,13 @@
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+    <%= f.label :trade %>
+    <%= f.select :trade, ['Electrical', 'Mechanical', 'Plumbing & FP']%>
+    <%= f.label :username %>
+    <%= f.text_field :username %><br />
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+    <br />
+    <%= f.submit %>
+<% end %>
