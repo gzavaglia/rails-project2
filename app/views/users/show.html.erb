@@ -1,4 +1,5 @@
 <h1>Welcome <%= @user.name %></h1>
 <p>Trade: <%= @user.trade %></p>
-<%= link_to "See your Buildings", buildings_path %>
-<%= link_to "Add a New Building", new_building_path %>
+<%= link_to "See your Buildings", user_buildings_path %>
+<%= link_to "Add a New Building", new_user_building_path %>
+
