@@ -8,17 +8,11 @@ class BuildingsController < ApplicationController
     end
 
     def new
-       # @building = Building.new
+        @user = Building.new
         @building = Building.new
     end
 
     def create
-        # @building = Building.create(building_params)
-        # if @building
-        #     redirect_to building_path(@building)
-        # else
-        #     render :new
-        # end
         @building = Building.new(building_params)
 
         if @building.save
