@@ -8,14 +8,15 @@ class BuildingsController < ApplicationController
     end
 
     def new
-        @user = Building.new
+        @user = User.find(params[:user_id])
         @building = Building.new
     end
 
     def create
         @building = Building.new(building_params)
-
+        @user = User.find(params[:user_id])
         if @building.save
+            @user.buildings << @building
             redirect_to user_buildings_path
         else
             render :new
@@ -24,6 +25,8 @@ class BuildingsController < ApplicationController
 
     def show
         @building = Building.find(params[:id])
+        @user = User.find(params[:id])
+
     end
 
     private

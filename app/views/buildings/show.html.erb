@@ -2,7 +2,7 @@
 Adress: <%= @building.address %><br />
 Number of Floors: <%= @building.floors %><br />
 <br />
-<%= form_tag("/rides", method: "post") do %>
+<%= form_tag("/projects", method: "post") do %>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= hidden_field_tag :attraction_id, @attraction.id %>
-<%= button_tag "Go on this ride" %>
+<%= hidden_field_tag :building_id, @building.id %>
+<%= button_tag "Save Building" %>
